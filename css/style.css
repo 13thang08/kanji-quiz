@@ -1,0 +1,99 @@
+#container {
+}
+
+#game-board {
+	width: 1480px;
+	height: 1280px;
+	border-style: solid;;
+	border-color: #FFA465;
+	border-width: 5px;
+	border-radius: 10px;
+}
+
+#game-header {
+	height: 135px;
+	margin: 0;
+	background: #FF7E26;
+}
+
+#game-body {
+	height: 1000px;
+	margin: 0;
+}
+
+#game-footer {
+	height: 135px;
+	margin: 0;
+}
+
+#game-title {
+	font-size: 100px;
+	color: white;
+}
+
+#instruction {
+	font-size: 50px;
+	margin-top: 70px;
+}
+
+#question {
+	font-size: 70px;
+	margin-top: 100px;
+}
+
+div#draw-table {
+	position: absolute;
+	top: 640px;
+	width: 1470px;
+	background-color: rgba(193,193,193,.67);
+}
+
+.draw-kanji-buttons {
+	position: absolute;
+	top: 430px;
+	right: 0;
+}
+
+#draw-kanji-result {
+	position: absolute;
+	top: 580px;
+	width: 1470px;
+	left: 20px;
+}
+
+.overlay {
+	position: absolute;
+	top: 145px;
+	width: 1470px;
+	height: 1000px;
+	position: absolute;
+	z-index: 1;
+	background-color: rgb(255,255,255);
+	background-color: rgba(255,255,255,0.9);
+	overflow-x: hidden;
+	overflow-y: hidden;
+}
+
+.overlay .closebtn {
+	position: absolute;
+	top: 20px;
+	right: 45px;
+	font-size: 60px;
+}
+
+.overlay img {
+	margin-top: -100px;
+}
+
+#incorrect-reason {
+	position: absolute;
+	top: 600px;
+	left: 220px;
+	background: #DBFBC3;
+	border-radius: 20px;
+	width: 1000px;
+	height: 300px;
+	padding-top: 60px;
+	font-size: 50px;
+	line-height: 70px;
+}

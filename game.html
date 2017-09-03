@@ -1,0 +1,75 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>漢字クイズ</title>
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+<script src="js/bootstrap.js"></script>
+<script>
+	function check() {
+		$('#overlay-incorrect').show();	
+		$('#btn-check').hide();
+		$('#btn-next').show();
+	}
+
+	function nextQuestion() {
+		$('#overlay-incorrect').hide();	
+		$('#btn-check').show();
+		$('#btn-next').hide();
+	}
+</script>
+
+</head>
+<body>
+<div id="container">
+	<div id="game-board">
+		<div id="game-header" class="row">
+			<h1 id="game-title" class="text-center">漢字クイズ</h1>
+		</div>
+		<div id="game-body" class="row">
+			<p id="instruction" class="text-center">＿＿のひらがなを漢字に直してください。</p>
+			<p id="question" class="text-center">
+				今日は、ごみの<span style="text-decoration: underline">しゅうしゅう</span>日ですか。
+			</p>
+			<div id="draw-kanji-result">
+				<p style="font-size: 40px;">収集</p>
+			</div>
+
+			<div id="draw-table">
+				<canvas id="draw-canvas" width="1304" height="500">
+				</canvas>
+				<div class="draw-kanji-buttons">
+					<button type="button" id="draw-clear" class="btn btn-default" style="font-size: 40px;">Clear</button>
+					<button type="button" id="draw-back" class="btn btn-default" style="font-size: 40px;">Back</button>
+				</div>
+			</div>
+
+			<div id="overlay-correct" class="overlay" style="display: none;">
+				<img src="img/correct.png">
+			</div>
+			<div id="overlay-incorrect" class="overlay" style="display: none;">
+				<img src="img/incorrect.png">
+				<div id="incorrect-reason">
+					<p class="text-center"><span style="color: red; font-weight: bold;">正解は</span>&nbsp;収集</p>
+					<p class="text-center">今日は、ごみの<span style="text-decoration: underline">収集</span>日ですか。</p>
+				</div>
+			</div>
+
+		</div>
+		<div id="game-footer" class="row text-center">
+			<button id="btn-check" type="button" class="btn" style="background-color: #FF7E26; margin-top: 20px;">
+				<p style="font-size: 50px; color: white;" onclick="check()">チェック</p>
+			</button>
+			<button id="btn-next" type="button" class="btn" style="background-color: #FF7E26; margin-top: 20px; display: none;">
+				<p style="font-size: 50px; color: white;" onclick="nextQuestion()">つぎへ</p>
+			</button>
+		</div>
+	</div>
+
+</div>
+
+</body>
+</html>

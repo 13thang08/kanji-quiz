@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>漢字クイズ</title>
+<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+</head>
+<script type="text/javascript">
+	function adjustSize() {
+		var contentHeight = $('iframe').contents().height();
+		var contentWidth = $('iframe').contents().width();
+		var windowHeight = $(window).height();
+		var windowWidth = $(window).width();
+
+		var scale = Math.min(windowWidth / contentWidth, windowHeight / contentHeight);
+
+		$('iframe').css({
+			'transform': 'scale(' + scale + ')',
+		});
+
+	}
+	$(window).on('resize', function(){
+		adjustSize();
+	});
+	$(window).on('load', function() {
+		adjustSize();
+	})
+</script>
+<body>
+<div id="container" style="margin: 0;">
+	<iframe src="game.html" style="border: 0; position: relative; height: 100%; width: 100%;" ></iframe>
+</div>
+
+</body>
+</html>
