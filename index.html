@@ -2,6 +2,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>漢字クイズ</title>
 <script type="text/javascript" src="js/jquery-3.2.1.js"></script>
 </head>
@@ -14,8 +16,15 @@
 
 		var scale = Math.min(windowWidth / contentWidth, windowHeight / contentHeight);
 
+		var left = (windowWidth - contentWidth * scale) / 2;
+		left = (left > 0) ? left : 0;
+
 		$('iframe').css({
-			'transform': 'scale(' + scale + ')',
+			"width": contentWidth,
+			"height": contentHeight,
+			"transform": 'scale(' + scale + ')',
+			"transform-origin": "top left 0",
+			"left": left,
 		});
 
 	}
@@ -27,8 +36,8 @@
 	})
 </script>
 <body>
-<div id="container" style="margin: 0;">
-	<iframe src="game.html" style="border: 0; position: relative; height: 100%; width: 100%;" ></iframe>
+<div id="container" style="margin: 0; overflow-x: hidden; overflow-y: hidden;">
+	<iframe src="game.html" style="border: 0; position: absolute; height: 100%; width: 100%;" ></iframe>
 </div>
 
 </body>
